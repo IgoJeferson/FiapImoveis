@@ -88,4 +88,9 @@ public class Imovel implements Serializable {
     public void setAtivo(Integer ativo) {
         this.ativo = ativo;
     }
+
+    @Override
+    public String toString() {
+        return this.id + " - " + this.nome;
+    }
 }

@@ -18,7 +18,7 @@ import br.com.fiap.igojeferson.fiapimoveis.model.Imovel;
 public class ImovelDAO extends SQLiteOpenHelper{
 
     public ImovelDAO(Context context) {
-        super(context, "Imoveis", null, 1);
+        super(context, "Imoveis", null, 2);
     }
 
     @Override
@@ -71,10 +71,8 @@ public class ImovelDAO extends SQLiteOpenHelper{
     }
 
     public void deleta(Imovel imovel) {
-        SQLiteDatabase db = getWritableDatabase();
-
-        String[] params = {imovel.getId().toString()};
-        db.delete("Imoveis", "id = ?", params);
+        imovel.setAtivo(0);
+        this.altera(imovel);
     }
 
     public void altera(Imovel imovel) {
@@ -83,7 +81,7 @@ public class ImovelDAO extends SQLiteOpenHelper{
         ContentValues dados = this.pegaDadosDoImovel(imovel);
         String[] params = {imovel.getId().toString()};
 
-        db.update("Alunos", dados, "id = ?", params );
+        db.update("Imoveis", dados, "id = ?", params );
     }
 
     @NonNull

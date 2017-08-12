@@ -49,6 +49,7 @@ public class FormularioActivity extends AppCompatActivity {
                 if(imovel.getId() != null){
                     dao.altera(imovel);
                 } else {
+                    imovel.setAtivo(1);
                     dao.insere(imovel);
                 }
                 dao.close();
