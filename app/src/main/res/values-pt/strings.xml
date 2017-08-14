@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="efetuar_login">Efetuar login</string>
+    <string name="emConstrucao">Em Construção</string>
+    <string name="endereco">Endereço</string>
+    <string name="manter_conectado">Manter conectado</string>
+    <string name="nome_contato">Nome contato</string>
+    <string name="observacao">Observação</string>
+    <string name="senha">Senha</string>
+    <string name="tamanho">Tamanho</string>
+    <string name="telefone">Telefone</string>
+    <string name="tipo">Tipo</string>
+    <string name="usuario">Usuário</string>
+    <string name="deletado_imovel">Deletado imóvel</string>
+    <string name="deletar">Deletar</string>
+    <string name="enviarSMS">Enviar SMS</string>
+    <string name="imovel">Imóvel</string>
+    <string name="ligar">Ligar</string>
+    <string name="salvo">salvo!</string>
+    <string name="visualizar_no_mapa">Visualizar no mapa</string>
+</resources>

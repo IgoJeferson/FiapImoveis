@@ -68,7 +68,7 @@ public class ListaImoveisActivity extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
         final Imovel imovel = (Imovel) listaImoveis.getItemAtPosition(info.position);
 
-        final MenuItem itemLigar = menu.add("Ligar");
+        final MenuItem itemLigar = menu.add(R.string.ligar);
         itemLigar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -85,17 +85,17 @@ public class ListaImoveisActivity extends AppCompatActivity {
             }
         });
 
-        MenuItem itemSMS = menu.add("Enviar SMS");
+        MenuItem itemSMS = menu.add(R.string.enviarSMS);
         Intent intentSMS = new Intent(Intent.ACTION_VIEW);
         intentSMS.setData(Uri.parse("sms:" + imovel.getTelefone()));
         itemSMS.setIntent(intentSMS);
 
-        MenuItem itemMapa = menu.add("Visualizar no mapa");
+        MenuItem itemMapa = menu.add(R.string.visualizar_no_mapa);
         Intent intentMapa = new Intent(Intent.ACTION_VIEW);
         intentMapa.setData(Uri.parse("geo:0,0?q=" + imovel.getEndereco()));
         itemMapa.setIntent(intentMapa);
 
-        MenuItem deletar = menu.add("Deletar");
+        MenuItem deletar = menu.add(R.string.deletar);
         deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -105,7 +105,7 @@ public class ListaImoveisActivity extends AppCompatActivity {
 
                 carregaLista();
 
-                Toast.makeText(ListaImoveisActivity.this, "Deletado imóvel " + imovel.getNome(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListaImoveisActivity.this, getString(R.string.deletado_imovel) + " " + imovel.getNome(), Toast.LENGTH_SHORT).show();
                 return false;
             }
         });

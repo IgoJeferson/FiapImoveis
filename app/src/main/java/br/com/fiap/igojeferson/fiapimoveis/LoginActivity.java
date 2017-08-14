@@ -22,24 +22,19 @@ public class LoginActivity extends AppCompatActivity {
     private CheckBox cbManterConectado;
     private static final boolean superMode = true;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //FIELDS
         etLogin = (EditText) findViewById(R.id.etLogin);
         etSenha = (EditText) findViewById(R.id.etSenha);
         cbManterConectado = (CheckBox) findViewById(R.id.cbManterConectado);
 
-        //GET SHARED PREFERENCES
         SharedPreferences configLogin = getSharedPreferences(PREFERENCE, Context.MODE_PRIVATE);
-        //SHOW PREVIOUS STORED DATA
         etLogin.setText(configLogin.getString(PREF_LOGIN,""));
         //etSenha.setText(configLogin.getString(PREF_PASS,""));
         boolean checked = configLogin.getBoolean(PREF_KEEP_CONNECTED, false);
-
 
         //START MAIN ACTIVITY IF CHECKED IS TRUE AND LOGIN?PASSWORD IS CORRECT
         if(checked){
@@ -49,14 +44,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    //CLICK BUTTON ACTION
     public void doLogin(View v){
         String login = etLogin.getText().toString();
         String password = etSenha.getText().toString();
         boolean keepLogged = cbManterConectado.isChecked();
         if(isValidUser(login,password)){
             if(keepLogged){
-                //CREATE AND SET SHARED PREFERENCES
                 SharedPreferences configLogin = getSharedPreferences(PREFERENCE, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = configLogin.edit();
                 editor.putString(PREF_LOGIN, login);
@@ -89,7 +82,4 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-
-
 }
-

@@ -1,17 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FiapImoveis</string>
-    <string name="title_activity_login">Sign in</string>
-
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="nome_contato">Contact name</string>
+    <string name="endereco">Address</string>
+    <string name="telefone">Phone</string>
+    <string name="tipo">Type</string>
+    <string name="tamanho">Size</string>
+    <string name="emConstrucao">Under construction</string>
+    <string name="observacao">Note</string>
+    <string name="usuario">User</string>
+    <string name="senha">Password</string>
+    <string name="manter_conectado">Keep connected</string>
+    <string name="efetuar_login">Sign in</string>
+    <string name="app_name" translatable="false">FiapImoveis</string>
+    <string name="ligar">Call</string>
+    <string name="enviarSMS">Send SMS</string>
+    <string name="visualizar_no_mapa">Show on a map</string>
+    <string name="deletar">Delete</string>
+    <string name="deletado_imovel">Deleted property</string>
+    <string name="imovel">Property</string>
+    <string name="salvo">saved!</string>
 </resources>

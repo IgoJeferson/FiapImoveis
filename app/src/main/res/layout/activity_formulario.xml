@@ -23,62 +23,87 @@
                 android:id="@+id/formulario_botaoFoto"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:background="@drawable/fundo_camera"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginRight="16dp"
+                android:background="@drawable/fundo_camera" />
         </RelativeLayout>
 
         <EditText
+            android:id="@+id/formulario_etNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome Contato"
-            android:id="@+id/formulario_etNome"/>
+            android:hint="@string/nome_contato" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Endereco"
             android:id="@+id/formulario_etEndereco"
-            android:ems="10"
-            android:inputType="textPostalAddress"/>
-
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telefone"
-            android:id="@+id/formulario_etTelefone"
             android:ems="10"
-            android:inputType="phone"/>
+            android:hint="@string/endereco"
+            android:inputType="textPostalAddress" />
 
-        <Spinner
+        <EditText
+            android:id="@+id/formulario_etTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/telefone"
+            android:inputType="phone" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Tipo Imóvel"
-            android:entries="@array/tipoImovel"
-            android:id="@+id/formulario_spTipoImovel" />
+            android:orientation="horizontal">
 
-        <Spinner
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipo"
+                android:paddingLeft="5dp"/>
+
+            <Spinner
+                android:id="@+id/formulario_spTipoImovel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/tipoImovel"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/tamanhoImovel"
-            android:id="@+id/formulario_spTamanhoImovel" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tamanho"
+                android:paddingLeft="5dp"/>
+
+            <Spinner
+                android:id="@+id/formulario_spTamanhoImovel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/tamanhoImovel" />
+
+        </LinearLayout>
 
         <CheckBox
             android:id="@+id/formulario_ckEmConstrucao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Em construcao" />
+            android:text="@string/emConstrucao" />
 
         <EditText
+            android:id="@+id/formulario_etObservacao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Observacao"
-            android:id="@+id/formulario_etObservacao"
             android:ems="10"
+            android:hint="@string/observacao"
             android:inputType="textMultiLine|text"
-            android:minLines="5"
-            android:maxLines="8"/>
+            android:maxLines="5"
+            android:minLines="3" />
 
     </LinearLayout>
 

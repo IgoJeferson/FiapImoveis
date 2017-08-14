@@ -85,7 +85,7 @@ public class FormularioActivity extends AppCompatActivity {
                 }
                 dao.close();
 
-                Toast.makeText(FormularioActivity.this, "Imovel " + imovel.getNome() + " salvo!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FormularioActivity.this, getString(R.string.imovel) + " " + imovel.getNome() + " " + getString(R.string.salvo), Toast.LENGTH_SHORT).show();
 
                 finish();
                 break;
