@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import br.com.fiap.igojeferson.fiapimoveis.adapter.ImoveisAdapter;
 import br.com.fiap.igojeferson.fiapimoveis.dao.ImovelDAO;
 import br.com.fiap.igojeferson.fiapimoveis.model.Imovel;
 
@@ -59,7 +60,7 @@ public class ListaImoveisActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        carregaLista();
+        this.carregaLista();
     }
 
     @Override
@@ -115,7 +116,7 @@ public class ListaImoveisActivity extends AppCompatActivity {
         List<Imovel> imoveis = dao.buscaImoveis();
         dao.close();
 
-        ArrayAdapter<Imovel> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, imoveis);
+        ImoveisAdapter adapter = new ImoveisAdapter(this, imoveis);
         listaImoveis.setAdapter(adapter);
     }
 }

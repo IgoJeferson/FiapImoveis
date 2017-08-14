@@ -16,6 +16,7 @@ public class Imovel implements Serializable {
     private Integer emConstrucao;
     private String observacao;
     private Integer ativo;
+    private String caminhoFoto;
 
     public Long getId() {
         return id;
@@ -87,6 +88,14 @@ public class Imovel implements Serializable {
 
     public void setAtivo(Integer ativo) {
         this.ativo = ativo;
+    }
+
+    public String getCaminhoFoto() {
+        return caminhoFoto;
+    }
+
+    public void setCaminhoFoto(String caminhoFoto) {
+        this.caminhoFoto = caminhoFoto;
     }
 
     @Override

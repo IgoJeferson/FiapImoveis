@@ -1,9 +1,11 @@
 package br.com.fiap.igojeferson.fiapimoveis.helper;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Switch;
 
 import br.com.fiap.igojeferson.fiapimoveis.FormularioActivity;
 import br.com.fiap.igojeferson.fiapimoveis.R;
@@ -12,7 +14,6 @@ import br.com.fiap.igojeferson.fiapimoveis.model.Imovel;
 /**
  * Created by IgoJeferson on 2017-08-11.
  */
-
 public class FormularioHelper {
 
     private final EditText campoNome;
@@ -22,6 +23,7 @@ public class FormularioHelper {
     private final Spinner campoTamanhoImovel;
     private final CheckBox campoEmConstrucao;
     private final EditText campoObservacao;
+    private final ImageView campoFoto;
 
     private Imovel imovel;
 
@@ -33,6 +35,7 @@ public class FormularioHelper {
         campoTamanhoImovel = (Spinner) activity.findViewById(R.id.formulario_spTamanhoImovel);
         campoEmConstrucao = (CheckBox) activity.findViewById(R.id.formulario_ckEmConstrucao);
         campoObservacao = (EditText) activity.findViewById(R.id.formulario_etObservacao);
+        campoFoto = (ImageView) activity.findViewById(R.id.formulario_IvFoto);
 
         imovel = new Imovel();
     }
@@ -45,6 +48,7 @@ public class FormularioHelper {
         imovel.setTamanho(campoTamanhoImovel.getSelectedItemPosition());
         imovel.setEmConstrucao(campoEmConstrucao.isChecked() ? 1 : 0);
         imovel.setObservacao(campoObservacao.getText().toString());
+        imovel.setCaminhoFoto(campoFoto.getTag() != null ? campoFoto.getTag().toString() : null);
         return imovel;
     }
 
@@ -56,6 +60,17 @@ public class FormularioHelper {
         campoTamanhoImovel.setSelection(imovel.getTamanho());
         campoEmConstrucao.setChecked(imovel.getEmConstrucao() > 0 ? true : false);
         campoObservacao.setText(imovel.getObservacao());
+        this.carregaImagem(imovel.getCaminhoFoto());
         this.imovel = imovel;
+    }
+
+    public void carregaImagem(String caminhoFoto) {
+        if(caminhoFoto != null){
+            Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
+            Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 300, 300, true);
+            campoFoto.setImageBitmap(bitmapReduzido);
+            campoFoto.setScaleType(ImageView.ScaleType.FIT_XY);
+            campoFoto.setTag(caminhoFoto);
+        }
     }
 }

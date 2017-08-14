@@ -18,12 +18,21 @@ import br.com.fiap.igojeferson.fiapimoveis.model.Imovel;
 public class ImovelDAO extends SQLiteOpenHelper{
 
     public ImovelDAO(Context context) {
-        super(context, "Imoveis", null, 2);
+        super(context, "Imoveis", null, 4);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE Imoveis (id INTEGER PRIMARY KEY, nome TEXT NOT NULL, endereco TEXT, telefone TEXT, tipo INTEGER, tamanho INTEGER, emConstrucao INTEGER, observacao TEXT, ativo INTEGER)";
+        String sql = "CREATE TABLE Imoveis (id INTEGER PRIMARY KEY, " +
+                "nome TEXT NOT NULL, " +
+                "endereco TEXT, " +
+                "telefone TEXT, " +
+                "tipo INTEGER, " +
+                "tamanho INTEGER, " +
+                "emConstrucao INTEGER, " +
+                "observacao TEXT, " +
+                "ativo INTEGER, " +
+                "caminhoFoto TEXT)";
         db.execSQL(sql);
     }
 
@@ -59,6 +68,7 @@ public class ImovelDAO extends SQLiteOpenHelper{
             imovel.setEmConstrucao(c.getInt(c.getColumnIndex("emConstrucao")));
             imovel.setObservacao(c.getString(c.getColumnIndex("observacao")));
             imovel.setAtivo(c.getInt(c.getColumnIndex("ativo")));
+            imovel.setCaminhoFoto(c.getString(c.getColumnIndex("caminhoFoto")));
 
             // TODO - Alterar - Incluir filtro na query
             if(imovel.getAtivo() > 0 ) {
@@ -95,6 +105,7 @@ public class ImovelDAO extends SQLiteOpenHelper{
         dados.put("emConstrucao", imovel.getEmConstrucao());
         dados.put("observacao", imovel.getObservacao());
         dados.put("ativo", imovel.getAtivo());
+        dados.put("caminhoFoto", imovel.getCaminhoFoto());
         return dados;
     }
 }
