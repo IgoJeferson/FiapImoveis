@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="tipoImovel">
-        <item>Casa</item>
-        <item>Apartamento</item>
-        <item>Loja</item>
-        <item>Não Sei</item>
+        <item>House</item>
+        <item>Apartment</item>
+        <item>Shop</item>
+        <item>I dont know</item>
     </array>
     <array name="tamanhoImovel">
-        <item>Pequeno</item>
-        <item>Médio</item>
-        <item>Grande</item>
-        <item>Não Sei</item>
+        <item>Small</item>
+        <item>Average</item>
+        <item>Great</item>
+        <item>I dont know</item>
     </array>
     <array name="simNao">
-        <item>Não</item>
-        <item>Sim</item>
+        <item>No</item>
+        <item>Yes</item>
     </array>
 </resources>
