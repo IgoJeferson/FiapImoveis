@@ -18,4 +18,8 @@
     <string name="ligar">Ligar</string>
     <string name="salvo">salvo!</string>
     <string name="visualizar_no_mapa">Visualizar no mapa</string>
+    <string name="loginInvalido">Login inválido!</string>
+    <string name="sobre">Sobre</string>
+    <string name="versao">Versão:</string>
+    <string name="nomeDoDesenvolvedor">Nome do desenvolvedor:</string>
 </resources>

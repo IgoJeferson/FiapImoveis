@@ -16,8 +16,8 @@
                 android:id="@+id/formulario_IvFoto"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="#00A8EC"
-                android:src="@drawable/person" />
+                android:background="#052556"
+                android:src="@drawable/icone_default" />
 
             <Button
                 android:id="@+id/formulario_botaoFoto"

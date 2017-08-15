@@ -7,12 +7,11 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.menu.ActionMenuItemView;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -55,6 +54,7 @@ public class ListaImoveisActivity extends AppCompatActivity {
         });
 
         registerForContextMenu(listaImoveis);
+
     }
 
     @Override
@@ -119,4 +119,21 @@ public class ListaImoveisActivity extends AppCompatActivity {
         ImoveisAdapter adapter = new ImoveisAdapter(this, imoveis);
         listaImoveis.setAdapter(adapter);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.drawer, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.sobre:
+                Toast.makeText(ListaImoveisActivity.this, getString(R.string.nomeDoDesenvolvedor) + " Igo Jeferson Barros Coelho - " + getString(R.string.versao) + " 1.0" , Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

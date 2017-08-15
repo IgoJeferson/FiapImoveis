@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
         SharedPreferences configLogin = getSharedPreferences(PREFERENCE, Context.MODE_PRIVATE);
         etLogin.setText(configLogin.getString(PREF_LOGIN,""));
-        //etSenha.setText(configLogin.getString(PREF_PASS,""));
+        etSenha.setText(configLogin.getString(PREF_PASS,""));
         boolean checked = configLogin.getBoolean(PREF_KEEP_CONNECTED, false);
 
         //START MAIN ACTIVITY IF CHECKED IS TRUE AND LOGIN?PASSWORD IS CORRECT
@@ -60,8 +60,7 @@ public class LoginActivity extends AppCompatActivity {
             openMain();
         }else{
             final View snackBarCoordinatorLayoutView = findViewById(R.id.snackbar_position);
-            //Snackbar.make(snackBarCoordinatorLayoutView,getString(R.string.textLoginInvalido),Snackbar.LENGTH_LONG).show();
-            Snackbar.make(snackBarCoordinatorLayoutView,"Login invalido!",Snackbar.LENGTH_LONG).show();
+            Snackbar.make(snackBarCoordinatorLayoutView, R.string.loginInvalido,Snackbar.LENGTH_LONG).show();
         }
     }
 

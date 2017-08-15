@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.fiap.igojeferson.fiapimoveis.R;
 import br.com.fiap.igojeferson.fiapimoveis.model.Imovel;
 
 /**
@@ -18,7 +19,7 @@ import br.com.fiap.igojeferson.fiapimoveis.model.Imovel;
 public class ImovelDAO extends SQLiteOpenHelper{
 
     public ImovelDAO(Context context) {
-        super(context, "Imoveis", null, 4);
+        super(context, "Imoveis", null, 1);
     }
 
     @Override
